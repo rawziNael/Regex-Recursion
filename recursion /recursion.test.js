@@ -1,17 +1,14 @@
 /* Write a function to do the division operation without using the built-in division*/
 
 function division(number, dividedBy) {
-    if (number == 0)
-        return 0;
+
     if (dividedBy == 0)
         return 0;
-    let quotient = 0;
-    while (number >= dividedBy) {
-        number = number - dividedBy;
-        quotient++;
-    }
-    return quotient;
+    if (number < dividedBy)
+        return 0;
+    return 1 + division(number - dividedBy, dividedBy)
 }
+
 
 /* Write a function that implement Math.pow(x,n) but using recursion
 Example:
